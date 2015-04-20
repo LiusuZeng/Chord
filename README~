@@ -1,0 +1,15 @@
+[README]
+
+This is the implementation of Chord Distributed Hash Table, taking the assumption that only one node leaves/joins the ring. Service providers can access the ring using "Chord" command, while users can do searches in the ring using "Query" command.
+
+For "Chord" command, service providers can enter "Chord" + port number to create a new ring with one node in the ring. Service providers can also enter "Chord" + listening port number + IP + port number to join an existing ring at the specific entrance and listen at the listening port. Within the user interface, service providers can enter "quit" to leave the ring, and "print" to check the up-to-date finger table. If there is a networking error in the accessing IP/port, an error message will be printed in the console.
+
+For "Query" command, users can enter "Query" + IP + port number to enter an existing ring and begin the searching process. Users will be asked to enter a key, which will be translated into SHA1 and searched in the ring. The node which is charge of the storage of this key will give a respond in the console about the searching result. In our case, since nothing is actually stored in all the nodes, "Not Found" will be the result that is returned. If the entry node for this search session leaves the ring, an error message will be printed in the console.
+
+For compilation, change the directory to Chord/src and input "make" in the commandline. For running, change the directory to Chord/classes and input "java userInterface/Chord" to run Chord, or "java userInterface/Query" to run Query.
+
+JVM version: Java 1.8
+
+
+By Liusu Zeng
+Mar. 16th., 2015
